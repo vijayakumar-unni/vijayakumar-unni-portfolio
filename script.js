@@ -46,6 +46,31 @@ document.querySelectorAll('.project-toggle').forEach((button) => {
   });
 });
 
+document.querySelectorAll('.pipeline-step').forEach((step) => {
+  step.addEventListener('click', () => {
+    const pipeline = step.closest('.adlc-visual');
+    const steps = [...pipeline.querySelectorAll('.pipeline-step')];
+    const selectedIndex = steps.indexOf(step);
+    steps.forEach((item, index) => {
+      item.classList.toggle('is-done', index < selectedIndex);
+      item.classList.toggle('is-active', index === selectedIndex);
+      item.querySelector('i').textContent = index < selectedIndex ? '✓' : index === selectedIndex ? '●' : '○';
+    });
+    pipeline.querySelector('.stage-message').textContent = `${step.dataset.stage} agent is ready`;
+  });
+});
+
+document.querySelectorAll('.ticket-action').forEach((button) => {
+  button.addEventListener('click', () => {
+    button.textContent = 'Running...';
+    button.closest('.support-visual').querySelector('.support-message').textContent = 'Diagnostics running via Adobe MCP';
+    window.setTimeout(() => {
+      button.textContent = 'Resolved';
+      button.closest('.support-visual').querySelector('.support-message').textContent = 'Evidence collected · approval required';
+    }, 900);
+  });
+});
+
 fetch('resume-data.json')
   .then((response) => response.ok ? response.json() : null)
   .then((resume) => {
