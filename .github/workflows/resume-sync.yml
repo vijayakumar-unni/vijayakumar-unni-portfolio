@@ -3,7 +3,7 @@ name: Sync portfolio from resume
 on:
   push:
     paths:
-      - resume/resume.pdf
+      - resume/**/*.pdf
     branches: [main]
   workflow_dispatch:
 

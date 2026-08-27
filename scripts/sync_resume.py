@@ -6,7 +6,8 @@ from pathlib import Path
 
 from pypdf import PdfReader
 
-resume_path = Path("resume/resume.pdf")
+resume_files = sorted(Path("resume").glob("*.pdf"))
+resume_path = resume_files[0] if resume_files else Path("resume/resume.pdf")
 output_path = Path("resume-data.json")
 
 if not resume_path.exists():
