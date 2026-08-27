@@ -45,3 +45,14 @@ document.querySelectorAll('.project-toggle').forEach((button) => {
     button.innerHTML = isOpen ? 'Hide project brief <span>−</span>' : 'View project brief <span>+</span>';
   });
 });
+
+fetch('resume-data.json')
+  .then((response) => response.ok ? response.json() : null)
+  .then((resume) => {
+    if (resume) {
+      document.querySelectorAll('[data-resume-summary]').forEach((element) => {
+        element.textContent = `Resume synced · ${resume.lastUpdated}`;
+      });
+    }
+  })
+  .catch(() => {});
