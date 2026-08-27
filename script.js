@@ -71,6 +71,20 @@ document.querySelectorAll('.ticket-action').forEach((button) => {
   });
 });
 
+document.querySelectorAll('.code-tab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const codeName = tab.dataset.code;
+    document.querySelectorAll('.code-tab').forEach((item) => {
+      const selected = item === tab;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-selected', String(selected));
+    });
+    document.querySelectorAll('.code-snippet').forEach((snippet) => {
+      snippet.classList.toggle('active', snippet.dataset.codePanel === codeName);
+    });
+  });
+});
+
 fetch('resume-data.json')
   .then((response) => response.ok ? response.json() : null)
   .then((resume) => {
