@@ -101,18 +101,31 @@ section > *:not(.section-head) {
   padding-right: 6vw;
 }
 
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: 6vw;
+  padding-right: 6vw;
+  box-sizing: border-box;
+}
+
 /* ---------- Topbar ---------- */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 6vw;
   background: rgba(12, 14, 15, 0.85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 16px 6vw;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .brand {
   display: flex;
@@ -605,6 +618,46 @@ section > *:not(.section-head) {
   line-height: 1.75;
 }
 
+/* ---------- Testimonials ---------- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.testimonial-card {
+  margin: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 26px 24px 24px;
+  position: relative;
+}
+.testimonial-card p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.testimonial-card footer strong {
+  display: block;
+  font-size: 13.5px;
+  color: var(--text);
+  font-weight: 600;
+}
+.testimonial-card footer span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-top: 2px;
+}
+.testimonial-card footer small {
+  display: block;
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 6px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
 /* ---------- Credentials ---------- */
 .credentials-grid {
   display: grid;
@@ -737,11 +790,13 @@ section > *:not(.section-head) {
 .footer {
   background: var(--panel);
   border-top: 1px solid var(--line);
-  padding: 80px 6vw 32px;
+  padding: 80px 0 32px;
 }
 .footer-inner {
   max-width: var(--max);
   margin: 0 auto;
+  padding: 0 6vw;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -776,6 +831,8 @@ section > *:not(.section-head) {
 .footer-fine {
   max-width: var(--max);
   margin: 20px auto 0;
+  padding: 0 6vw;
+  box-sizing: border-box;
   font-size: 12px;
   color: var(--text-faint);
 }
@@ -845,6 +902,9 @@ section > *:not(.section-head) {
   }
   .skill-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
   }
   .credentials-grid {
     grid-template-columns: 1fr;
