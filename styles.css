@@ -88,7 +88,7 @@ button {
   margin-top: 14px;
   color: var(--text-soft);
   font-size: 15.5px;
-  max-width: 56ch;
+  max-width: 60ch;
 }
 
 section {
