@@ -41,7 +41,6 @@
         <nav class="nav-links" aria-label="Primary navigation">
             <a href="#work">Work</a>
             <a href="#skills">Skills</a>
-            <a href="#code">Code</a>
             <a href="#credentials">Credentials</a>
             <a class="nav-resume" href="resume/Vijayakumar%20Unni%20-%20Resume.pdf" download>Resume</a>
         </nav>
@@ -90,8 +89,8 @@
                         delivered</span></div>
                 <div class="stat"><span class="stat-num">2</span><span class="stat-label">Adobe AEM Sites Developer
                         certifications</span></div>
-                <div class="stat"><span class="stat-num">50%+</span><span class="stat-label">JUnit coverage maintained
-                        across projects</span></div>
+                <div class="stat"><span class="stat-num">3</span><span class="stat-label">recognitions for ownership,
+                        quality &amp; migration leadership</span></div>
             </div>
         </section>
 
@@ -546,51 +545,6 @@
             </div>
         </section>
 
-        <section class="code" id="code">
-            <div class="section-head">
-                <p class="section-tag">Code</p>
-                <h2>Proof, not just claims.</h2>
-            </div>
-            <div class="code-viewer">
-                <div class="code-tabs" role="tablist" aria-label="Code examples">
-                    <button class="code-tab active" role="tab" aria-selected="true" data-code="sling">Sling
-                        Model</button>
-                    <button class="code-tab" role="tab" aria-selected="false" data-code="graphql">GraphQL</button>
-                    <button class="code-tab" role="tab" aria-selected="false" data-code="mcp">Support Agent +
-                        MCP</button>
-                    <button class="code-tab" role="tab" aria-selected="false" data-code="orchestration">Multi-Agent
-                        Orchestration</button>
-                </div>
-                <div class="code-pane">
-                    <pre class="code-snippet active" data-code-panel="sling"><code><span class="kw">@Model</span>(adaptables = Resource.class)
-<span class="kw">@Exporter</span>(name = <span class="str">"jackson"</span>, extensions = <span class="str">"json"</span>)
-<span class="k">public class</span> ProfileModel {
-    <span class="kw">@ValueMapValue</span> <span class="k">private</span> String displayName;
-    <span class="kw">@OSGiService</span> <span class="k">private</span> ProfileService service;
-}</code></pre>
-                    <pre class="code-snippet" data-code-panel="graphql"><code><span class="k">query</span> GlobalHealthContent {
-  globalHealthList { items { title slug region
-    heroImage { _path } body { plaintext }
-  } }
-}
-<span class="cm">// persisted query, consumed directly by the Angular SPA</span></code></pre>
-                    <pre class="code-snippet" data-code-panel="mcp"><code><span class="k">async def</span> diagnose_jcr_logs(ticket_id: str):
-    evidence = <span class="k">await</span> adobe_mcp.call_tool(
-        <span class="str">"jcr_log_diagnosis"</span>, {<span class="str">"ticket"</span>: ticket_id})
-    <span class="k">return</span> classify_risk(evidence, require_hitl=<span class="kw">True</span>)</code></pre>
-                    <pre class="code-snippet" data-code-panel="orchestration"><code><span class="cm"># design -> code gen -> validate -> feedback loop</span>
-design = design_agent.run(spec, require_approval=<span class="kw">True</span>)
-build  = codegen_agent.run(design)  <span class="cm"># components, HTL, OSGi config</span>
-
-report = <span class="k">await</span> validate(build, tools=[<span class="str">"playwright"</span>, <span class="str">"lighthouse"</span>])
-<span class="k">if</span> report.has_failures():
-    build = codegen_agent.remediate(report)  <span class="cm"># feedback loop</span>
-
-deploy(build, via=<span class="str">"cloud_manager_pipeline"</span>)</code></pre>
-                </div>
-            </div>
-        </section>
-
         <section class="credentials" id="credentials">
             <div class="section-head">
                 <p class="section-tag">Credentials</p>
@@ -599,21 +553,33 @@ deploy(build, via=<span class="str">"cloud_manager_pipeline"</span>)</code></pre
             <div class="credentials-grid">
                 <div class="cred-card">
                     <h3>Certifications</h3>
-                    <p>Adobe Certified Expert — AEM Sites Developer</p>
-                    <p>Adobe Certified Professional — AEM Sites Developer</p>
+                    <ul class="cert-list">
+                        <li><strong>Adobe Certified Expert</strong><span>AEM Sites Developer</span></li>
+                        <li><strong>Adobe Certified Professional</strong><span>AEM Sites Developer</span></li>
+                    </ul>
                 </div>
                 <div class="cred-card">
                     <h3>Awards &amp; recognition</h3>
-                    <p>The Extra Mile Award — exceptional ownership and proactive problem-solving beyond role
-                        expectations</p>
-                    <p>Key Contributor, AEMaaCS Migration Initiative</p>
-                    <p>Excellence in Code Quality &amp; Best Practices Implementation</p>
+                    <ul class="award-list">
+                        <li><strong>The Extra Mile Award</strong><span>Exceptional ownership and proactive
+                                problem-solving beyond role expectations</span></li>
+                        <li><strong>Key Contributor</strong><span>AEMaaCS Migration Initiative</span></li>
+                        <li><strong>Excellence in Code Quality</strong><span>Best Practices Implementation</span></li>
+                    </ul>
                 </div>
                 <div class="cred-card">
                     <h3>Education</h3>
-                    <p>Bachelor of Engineering — VTU, 2019</p>
-                    <p>Diploma — Board of Technical Education, Bangalore, 2016</p>
-                    <p>SSLC — Karnataka State Board, 2013</p>
+                    <ul class="edu-timeline">
+                        <li><span class="edu-year">2019</span>
+                            <div><strong>Bachelor of Engineering</strong><small>VTU</small></div>
+                        </li>
+                        <li><span class="edu-year">2016</span>
+                            <div><strong>Diploma</strong><small>Board of Technical Education, Bangalore</small></div>
+                        </li>
+                        <li><span class="edu-year">2013</span>
+                            <div><strong>SSLC</strong><small>Karnataka State Board</small></div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
