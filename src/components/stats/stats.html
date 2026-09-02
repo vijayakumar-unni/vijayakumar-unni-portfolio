@@ -1,0 +1,9 @@
+{{#with stats}}
+<section class="stats" aria-label="{{label}}">
+    <div class="stats-grid">
+        {{#each items}}
+        <div class="stat"><span class="stat-num">{{value}}</span><span class="stat-label">{{label}}</span></div>
+        {{/each}}
+    </div>
+</section>
+{{/with}}

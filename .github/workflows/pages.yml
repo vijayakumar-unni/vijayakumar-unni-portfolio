@@ -10,9 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+# Queue Pages deployments rather than cancelling them: aborting a run that is
+# already publishing can leave the live site on a half-applied deployment.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -24,13 +26,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Must run before the build, and `enablement` switches the repository
+      # from the legacy "build from branch" mode to Actions-based publishing.
+      # Without it, GitHub also auto-runs its own pages-build-deployment from
+      # the main branch root, and the two deployments race.
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # No dependencies to install — build.js uses only the Node standard library.
+      - name: Build site
+        run: node build.js
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
 
       - name: Deploy
         id: deployment

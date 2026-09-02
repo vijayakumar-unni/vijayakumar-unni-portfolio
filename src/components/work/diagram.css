@@ -1,0 +1,112 @@
+.diagram {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 10px 8px;
+  margin-bottom: 26px;
+}
+
+.diagram-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  color: var(--grey-line);
+}
+
+.diagram-svg .edge {
+  fill: none;
+  stroke: var(--grey-line);
+  stroke-width: 1.6;
+  color: var(--grey-line);
+}
+
+.phase-box {
+  fill: none;
+  stroke: var(--grey-line);
+  stroke-dasharray: 4 4;
+  stroke-width: 1.2;
+}
+
+.phase-label {
+  fill: var(--text-faint);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10.5px;
+  text-anchor: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Diagram nodes ---------- */
+.node {
+  cursor: pointer;
+  outline: none;
+}
+
+.node rect {
+  fill: var(--panel-raised);
+  stroke: var(--grey-line);
+  stroke-width: 1.3;
+  transition:
+    stroke 0.15s,
+    filter 0.15s;
+}
+
+.node text {
+  fill: var(--text-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+}
+
+.node-ai rect {
+  stroke: var(--teal);
+}
+
+.node-aem rect {
+  stroke: var(--amber);
+}
+
+.node-legacy rect {
+  stroke: var(--text-faint);
+  stroke-dasharray: 3 3;
+}
+
+.node-highlight rect {
+  fill: var(--panel);
+}
+
+.node:hover rect,
+.node:focus rect {
+  filter: brightness(1.35);
+}
+
+.node-ai:hover text,
+.node-ai:focus text,
+.node-aem:hover text,
+.node-aem:focus text {
+  fill: var(--text);
+}
+
+.diagram-caption {
+  margin-top: 6px;
+  padding: 12px 14px 14px;
+  font-size: 13.5px;
+  color: var(--text-soft);
+  min-height: 1.4em;
+  border-top: 1px solid var(--line);
+}
+
+/* Wide diagrams (the ADLC orchestration map) scroll rather than shrink to
+   illegibility on small screens. */
+@media (max-width: 640px) {
+  .diagram-scroll {
+    overflow-x: auto;
+  }
+
+  .diagram-scroll .diagram-svg {
+    width: 680px;
+    max-width: none;
+  }
+}

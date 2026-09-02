@@ -1,0 +1,9 @@
+{
+  "label": "Career snapshot",
+  "items": [
+    { "value": "4", "label": "Years of enterprise AEM experience" },
+    { "value": "5", "label": "Enterprise platforms delivered" },
+    { "value": "2", "label": "Adobe AEM Sites Developer certifications" },
+    { "value": "3", "label": "Recognitions for ownership, quality & migration" }
+  ]
+}

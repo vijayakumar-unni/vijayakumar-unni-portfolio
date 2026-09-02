@@ -1,0 +1,118 @@
+/* Page scaffolding plus the small primitives shared across components. */
+
+section {
+  padding: 96px 0;
+}
+
+/* Sections constrain their own children so the section background can still
+   run full-bleed (see .stats). .section-head opts out and pads itself. */
+section > *:not(.section-head) {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
+.section-head {
+  max-width: var(--max);
+  margin: 0 auto 48px;
+  padding: 0 6vw;
+}
+
+.section-tag {
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.01em;
+}
+
+.section-head h2 {
+  font-size: clamp(26px, 3.2vw, 38px);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  max-width: 100%;
+}
+
+.section-sub {
+  margin-top: 14px;
+  color: var(--text-soft);
+  font-size: 15.5px;
+  max-width: 60ch;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-size: 14.5px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition:
+    transform 0.12s,
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: #161207;
+}
+
+.btn-primary:hover {
+  background: #efb768;
+}
+
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--text-soft);
+}
+
+/* ---------- Category dots ---------- */
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.dot-ai {
+  background: var(--teal);
+}
+
+.dot-aem {
+  background: var(--amber);
+}
+
+.dot-general {
+  background: var(--text-faint);
+}
+
+/* ---------- Category pills ---------- */
+.tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 20px;
+  letter-spacing: 0.01em;
+}
+
+.tag-ai {
+  background: var(--teal-soft);
+  color: var(--teal);
+}
+
+.tag-aem {
+  background: var(--amber-soft);
+  color: var(--amber);
+}

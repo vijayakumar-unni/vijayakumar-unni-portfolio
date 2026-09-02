@@ -1,0 +1,186 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(12, 14, 15, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 16px 6vw;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Signature wordmark ---------- */
+.brand-logo {
+  position: relative;
+  display: block;
+  height: var(--logo-height);
+  flex: none;
+}
+
+.brand-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+  transition:
+    filter 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* The sheen is masked to the letterforms with the wordmark itself, so the
+   highlight travels across the gold script rather than across a rectangle.
+   .brand-sheen stays put (it holds the mask) while ::before sweeps inside it. */
+.brand-sheen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-mask: url("../Images/logo-wordmark.png") 0 0 / 100% 100% no-repeat;
+  mask: url("../Images/logo-wordmark.png") 0 0 / 100% 100% no-repeat;
+}
+
+.brand-sheen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255, 252, 201, 0.95), transparent);
+  transform: translateX(-160%);
+}
+
+.brand:hover .brand-logo img,
+.brand:focus-visible .brand-logo img {
+  filter: drop-shadow(0 0 12px rgba(227, 163, 76, 0.4)) brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.brand:hover .brand-sheen,
+.brand:focus-visible .brand-sheen {
+  opacity: 1;
+}
+
+.brand:hover .brand-sheen::before,
+.brand:focus-visible .brand-sheen::before {
+  animation: brand-sheen 850ms ease-out;
+}
+
+@keyframes brand-sheen {
+  from {
+    transform: translateX(-160%);
+  }
+
+  to {
+    transform: translateX(340%);
+  }
+}
+
+/* The glow still reads as a hover cue; only the travelling highlight is motion. */
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo img {
+    transition: filter 0.35s ease;
+  }
+
+  .brand:hover .brand-logo img,
+  .brand:focus-visible .brand-logo img {
+    transform: none;
+  }
+
+  .brand:hover .brand-sheen,
+  .brand:focus-visible .brand-sheen {
+    opacity: 0;
+  }
+
+  .brand:hover .brand-sheen::before,
+  .brand:focus-visible .brand-sheen::before {
+    animation: none;
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.nav-links a {
+  color: var(--text-soft);
+  transition: color 0.15s;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-resume {
+  color: #12100c !important;
+  background: var(--amber);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.nav-resume:hover {
+  background: #efb768;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+}
+
+/* Below --bp-sm the links collapse behind the hamburger and the signature
+   scales back so the brand and toggle still fit one line. */
+@media (max-width: 640px) {
+  .brand-logo {
+    height: var(--logo-height-sm);
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: var(--topbar-height-sm) 0 0 0;
+    background: var(--bg);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 6vw;
+    gap: 22px;
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.15s,
+      transform 0.15s;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}

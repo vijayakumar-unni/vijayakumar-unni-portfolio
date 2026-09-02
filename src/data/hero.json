@@ -1,0 +1,19 @@
+{
+  "location": "Bangalore, India",
+  "nameLines": ["Vijayakumar", "Unni"],
+  "role": {
+    "lead": "Adobe Certified AEM Developer",
+    "tail": "AI Engineer"
+  },
+  "intro": "Four years designing, building, and migrating enterprise AEM platforms — and, more recently, building the AI agents that build and support them. I've shipped a multi-agent framework that automates the AEM development lifecycle end to end, and a support system where Claude agents diagnose and resolve production tickets before a human opens the queue.",
+  "portrait": {
+    "src": "Images/Vijay.png",
+    "alt": "Vijayakumar Unni, Adobe Certified AEM Developer",
+    "width": 1084,
+    "height": 992
+  },
+  "tag": {
+    "value": "4 yrs",
+    "label": "AEM + AI Engineer"
+  }
+}

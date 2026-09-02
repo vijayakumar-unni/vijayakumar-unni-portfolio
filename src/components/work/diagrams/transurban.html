@@ -1,0 +1,34 @@
+<svg viewBox="0 0 760 150" class="diagram-svg" role="img" aria-label="Cloud migration pipeline diagram">
+    <path class="edge" d="M120,60 L200,60" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M330,60 L430,60" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M600,60 L650,60" marker-end="url(#arrow)"></path>
+
+    <g class="node node-legacy" tabindex="0"
+        data-desc="The starting point: an on-premise AEM 6.5 instance with legacy WCMUsePojo classes and static templates.">
+        <rect x="15" y="30" width="105" height="60" rx="8"></rect>
+        <text x="67" y="55">AEM 6.5</text>
+        <text x="67" y="72">On-Premise</text>
+    </g>
+
+    <g class="node node-aem" tabindex="0"
+        data-desc="Requirement analysis, sprint planning, and a full BPA pass — critical cloud compatibility issues resolved before migration, not after.">
+        <rect x="200" y="20" width="130" height="80" rx="8"></rect>
+        <text x="265" y="55">BPA Analysis</text>
+        <text x="265" y="72">+ Resolution</text>
+    </g>
+
+    <g class="node node-aem node-highlight" tabindex="0"
+        data-desc="WCMUsePojo classes refactored into modern Sling Models. Static and editable templates migrated. Content moved with the CTT tool and Groovy scripts.">
+        <rect x="430" y="20" width="170" height="80" rx="8"></rect>
+        <text x="515" y="48">Sling Model Refactor</text>
+        <text x="515" y="65">+ CTT Content Migration</text>
+        <text x="515" y="82" style="font-size:10.5px">Groovy Scripts</text>
+    </g>
+
+    <g class="node node-aem" tabindex="0"
+        data-desc="Run modes configured per environment; Cloud Manager CI/CD pipelines set up and kept green through release.">
+        <rect x="650" y="30" width="95" height="60" rx="8"></rect>
+        <text x="697" y="55">AEMaaCS</text>
+        <text x="697" y="72">Live</text>
+    </g>
+</svg>

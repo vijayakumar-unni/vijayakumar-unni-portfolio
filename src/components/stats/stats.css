@@ -1,0 +1,37 @@
+.stats {
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 52px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.stat-num {
+  display: block;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3.2vw, 36px);
+  color: var(--amber);
+}
+
+.stat-label {
+  display: block;
+  margin-top: 8px;
+  font-size: 13.5px;
+  color: var(--text-soft);
+  line-height: 1.5;
+  max-width: 20ch;
+}
+
+/* Below --bp-sm four columns become two. */
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+}

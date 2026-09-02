@@ -1,0 +1,45 @@
+/**
+ * Design tokens. Everything visual should reference these rather than raw
+ * values, so a palette change is a one-file edit.
+ *
+ * Breakpoints (referenced in comments only — custom properties are not valid
+ * inside media queries):
+ *   --bp-md: 980px  tablet / stacked layouts
+ *   --bp-sm: 640px  phone / collapsed nav
+ */
+:root {
+  /* Surfaces */
+  --bg: #0c0e0f;
+  --panel: #15181a;
+  --panel-raised: #1b1f21;
+  --line: #292e30;
+  --grey-line: #3a3f3d;
+
+  /* Text */
+  --text: #edebe4;
+  --text-soft: #9ba19c;
+  --text-faint: #666b67;
+
+  /* Accents */
+  --amber: #e3a34c;
+  --amber-soft: rgba(227, 163, 76, 0.14);
+  --teal: #4fada3;
+  --teal-soft: rgba(79, 173, 163, 0.14);
+
+  /* Geometry */
+  --radius: 6px;
+  --max: 1160px;
+
+  /* Header signature wordmark. The image is rendered at width:auto, so its own
+     aspect ratio decides the width and this height is the only dial — raise or
+     lower it to resize the logo. Swapping Images/logo.png regenerates the
+     wordmark on the next build; no other file needs touching. */
+  --logo-height: 70px;
+  --logo-height-sm: 50px;
+
+  /* Derived from the logo: 16px padding top and bottom plus the 1px border.
+     The mobile menu overlay and anchor scroll offsets both read these, so
+     changing --logo-height keeps them in step automatically. */
+  --topbar-height: calc(var(--logo-height) + 33px);
+  --topbar-height-sm: calc(var(--logo-height-sm) + 33px);
+}

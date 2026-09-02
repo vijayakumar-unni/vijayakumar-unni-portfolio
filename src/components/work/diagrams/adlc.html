@@ -1,0 +1,74 @@
+<svg viewBox="0 0 940 340" class="diagram-svg" role="img" aria-label="Multi-agent orchestration diagram">
+    <path class="edge" d="M420,69 L100,100" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M440,69 L280,100" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M460,69 L460,100" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M480,69 L640,100" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M500,69 L820,100" marker-end="url(#arrow)"></path>
+
+    <g class="node node-ai node-highlight" tabindex="0"
+        data-desc="Coordinates the entire agentic development lifecycle end to end, dispatching work to nine specialized sub-agents and tracking overall progress.">
+        <rect x="360" y="15" width="200" height="54" rx="8"></rect>
+        <text x="460" y="38">Orchestrator</text>
+        <text x="460" y="54" style="font-size:10px">Main Orchestrator</text>
+    </g>
+
+    <rect class="phase-box" x="20" y="100" width="160" height="210" rx="8"></rect>
+    <text class="phase-label" x="100" y="118">Planning &amp; Architecture</text>
+    <g class="node node-ai" tabindex="0"
+        data-desc="Analyzes the feature request and defines the technical approach and architecture strategy before any design work begins.">
+        <rect x="30" y="132" width="140" height="34" rx="6"></rect>
+        <text x="100" y="152" style="font-size:11.5px">Planning</text>
+    </g>
+    <g class="node node-ai" tabindex="0"
+        data-desc="Turns the agreed strategy into a detailed AEM component and content architecture design.">
+        <rect x="30" y="174" width="140" height="34" rx="6"></rect>
+        <text x="100" y="194" style="font-size:11.5px">Design</text>
+    </g>
+
+    <rect class="phase-box" x="200" y="100" width="160" height="210" rx="8"></rect>
+    <text class="phase-label" x="280" y="118">Implementation</text>
+    <g class="node node-ai" tabindex="0"
+        data-desc="Builds the AEM components — dialogs, HTL markup, and client libraries.">
+        <rect x="210" y="132" width="140" height="34" rx="6"></rect>
+        <text x="280" y="152" style="font-size:11.5px">Components</text>
+    </g>
+    <g class="node node-ai" tabindex="0"
+        data-desc="Builds the integration layer — Sling Models, Servlets, and OSGi services connecting components to data.">
+        <rect x="210" y="174" width="140" height="34" rx="6"></rect>
+        <text x="280" y="194" style="font-size:11.5px">Integration</text>
+    </g>
+    <g class="node node-ai" tabindex="0"
+        data-desc="Handles OSGi configuration and environment-specific setup for the build.">
+        <rect x="210" y="216" width="140" height="34" rx="6"></rect>
+        <text x="280" y="236" style="font-size:11.5px">Configuration</text>
+    </g>
+    <g class="node node-ai" tabindex="0"
+        data-desc="Assembles the generated components into complete templates and content structures.">
+        <rect x="210" y="258" width="140" height="34" rx="6"></rect>
+        <text x="280" y="278" style="font-size:11.5px">Content</text>
+    </g>
+
+    <rect class="phase-box" x="380" y="100" width="160" height="210" rx="8"></rect>
+    <text class="phase-label" x="460" y="118" style="font-size:9.5px">Validation &amp; Local Build</text>
+    <g class="node node-ai" tabindex="0"
+        data-desc="Runs the local build and automated Playwright + Lighthouse checks before anything ships.">
+        <rect x="390" y="132" width="140" height="34" rx="6"></rect>
+        <text x="460" y="152" style="font-size:11.5px">Code Quality</text>
+    </g>
+
+    <rect class="phase-box" x="560" y="100" width="160" height="210" rx="8"></rect>
+    <text class="phase-label" x="640" y="118">Deployment</text>
+    <g class="node node-ai" tabindex="0"
+        data-desc="Pushes the validated build through the CI/CD pipeline to the target environment.">
+        <rect x="570" y="132" width="140" height="34" rx="6"></rect>
+        <text x="640" y="152" style="font-size:11.5px">CI/CD Pipelines</text>
+    </g>
+
+    <rect class="phase-box" x="740" y="100" width="160" height="210" rx="8"></rect>
+    <text class="phase-label" x="820" y="118" style="font-size:9.5px">Real Validation</text>
+    <g class="node node-ai" tabindex="0"
+        data-desc="Validates the deployed build against the real environment, confirming it behaves correctly under production-like conditions.">
+        <rect x="750" y="132" width="140" height="34" rx="6"></rect>
+        <text x="820" y="152" style="font-size:11.5px">QA Testing</text>
+    </g>
+</svg>

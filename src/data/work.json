@@ -1,0 +1,112 @@
+{
+  "sectionTag": "Work",
+  "heading": "Projects I've delivered",
+  "sub": "Pick a project — the diagram shows how it actually works, not just what it used.",
+  "projects": [
+    {
+      "id": "adlc",
+      "listTitle": "AI-Powered AEM Sites ADLC",
+      "listMeta": "Cognizant · AI & Agentic",
+      "dot": "dot-ai",
+      "title": "AI-Powered AEM Sites ADLC",
+      "tag": "AI & Agentic",
+      "tagClass": "tag-ai",
+      "description": "A multi-agent framework that automates the end-to-end AEM Sites development lifecycle using specialized AI agents and reusable AEM Markdown skills — from architecture design through code generation, testing, and deployment.",
+      "diagram": "components/work/diagrams/adlc",
+      "diagramScroll": true,
+      "diagramCaption": "Hover or tap an agent to see what it actually does.",
+      "points": [
+        "Created specialized AI agents using Markdown skills for architecture, design, and code generation.",
+        "Automated the creation of AEM components, dialogs, HTL, OSGi configurations, and Content Fragments.",
+        "Built an approval-driven workflow for generating and reviewing architectural designs before code is written.",
+        "Automated code validation, Git commits, PR creation, and CI/CD deployment pipelines.",
+        "Validated end-to-end workflows using Claude CLI and VS Code to minimize manual developer effort."
+      ],
+      "stack": ["AEMaaCs", "Claude CLI", "Markdown Skills", "Playwright", "Lighthouse", "Git", "CI/CD"]
+    },
+    {
+      "id": "support",
+      "listTitle": "Enterprise AEM Support Automation",
+      "listMeta": "Cognizant · AI & Agentic",
+      "dot": "dot-ai",
+      "title": "Enterprise AEM Support Automation",
+      "tag": "AI & Agentic",
+      "tagClass": "tag-ai",
+      "description": "An enterprise support platform integrating Jira/ServiceNow, Claude Agent SDK, and Adobe MCP servers to autonomously diagnose, debug, and resolve L1/L2 AEM issues — with a risk engine that keeps production changes human-approved.",
+      "diagram": "components/work/diagrams/support",
+      "diagramScroll": false,
+      "diagramCaption": "Hover or tap a step to see what actually happens at each stage.",
+      "points": [
+        "Built webhook pipelines that process tickets, extract context, and trigger diagnostics automatically.",
+        "Integrated Adobe MCP servers for live environment access — log and JCR analysis grounded in real evidence.",
+        "Developed a FastAPI risk-classification engine requiring HITL approval for production changes.",
+        "Implemented structured audit trails and execution logging across Python microservices.",
+        "Deployed PostgreSQL-backed microservices on AWS EC2 for persistent ticket state and log storage."
+      ],
+      "stack": ["FastAPI", "Python", "Claude Agent SDK", "Adobe MCP", "PostgreSQL", "AWS EC2"]
+    },
+    {
+      "id": "kaiser",
+      "listTitle": "Global Marketing Enhancements",
+      "listMeta": "Kaiser Permanente · Headless AEM",
+      "dot": "dot-aem",
+      "title": "Global Marketing Enhancements",
+      "tag": "Headless AEM",
+      "tagClass": "tag-aem",
+      "description": "An enterprise marketing platform on Headless AEM and Angular SPA, delivering healthcare content across multiple regions and digital channels from one shared content model.",
+      "diagram": "components/work/diagrams/kaiser",
+      "diagramScroll": false,
+      "diagramCaption": "Hover or tap a node to see what actually happens at each stage.",
+      "points": [
+        "Implemented Headless AEM with Angular SPA architecture end to end.",
+        "Designed templates, components, Sling Models, Servlets, and OSGi services; used MSM for multilingual content.",
+        "Built Auto-Suggestion Search using AEM Search APIs.",
+        "Integrated Adobe Analytics, CJA Analytics, and Marketo for marketing insight.",
+        "Managed Dispatcher configuration and SEO (sitemap/robots.txt); coordinated with AMS and Release teams.",
+        "Achieved 50%+ JUnit code coverage."
+      ],
+      "stack": ["Headless AEM", "Angular SPA", "MSM", "GraphQL", "Adobe Analytics + CJA", "Marketo"]
+    },
+    {
+      "id": "transurban",
+      "listTitle": "AEM 6.5 → AEMaaCS Migration",
+      "listMeta": "Transurban · Cloud Migration",
+      "dot": "dot-aem",
+      "title": "AEM 6.5 → AEMaaCS Migration",
+      "tag": "Cloud Migration",
+      "tagClass": "tag-aem",
+      "description": "Migrated enterprise websites from AEM 6.5 On-Premise to AEM as a Cloud Service — cloud compliance, performance improvement, and architecture modernization, without a broken release.",
+      "diagram": "components/work/diagrams/transurban",
+      "diagramScroll": false,
+      "diagramCaption": "Hover or tap a step to see what actually happens at each stage.",
+      "points": [
+        "Performed requirement analysis, sprint planning, and story estimation.",
+        "Executed BPA and resolved every critical cloud-compatibility issue ahead of migration.",
+        "Refactored WCMUsePojo classes to Sling Models; migrated static and editable templates.",
+        "Ran content migration using the CTT tool and Groovy scripts; configured environment-specific run modes.",
+        "Set up and maintained Cloud Manager CI/CD pipelines with 50%+ JUnit coverage."
+      ],
+      "stack": ["AEMaaCS", "BPA", "CTT", "Groovy Scripts", "Cloud Manager", "JUnit"]
+    },
+    {
+      "id": "golfpride",
+      "listTitle": "E-Commerce Platform",
+      "listMeta": "Golf Pride · AEM Hybrid SPA",
+      "dot": "dot-aem",
+      "title": "E-Commerce Platform Development",
+      "tag": "AEM Hybrid SPA",
+      "tagClass": "tag-aem",
+      "description": "A full e-commerce platform for Golf Pride on an AEM Hybrid SPA, supporting the complete purchase lifecycle end to end.",
+      "diagram": "components/work/diagrams/golfpride",
+      "diagramScroll": false,
+      "diagramCaption": "Hover or tap a step to see what actually happens at each stage.",
+      "points": [
+        "Implemented Cart, Payment, Shipping, Inventory Management, and Order Confirmation modules.",
+        "Integrated Adobe Analytics for customer tracking across the purchase journey.",
+        "Built custom AEM components with robust dialog validations for reusability and UI integrity.",
+        "Used Query Builder and Page Manager APIs; maintained 50%+ JUnit coverage."
+      ],
+      "stack": ["AEM Hybrid SPA", "Query Builder API", "Page Manager API", "Adobe Analytics", "JUnit"]
+    }
+  ]
+}

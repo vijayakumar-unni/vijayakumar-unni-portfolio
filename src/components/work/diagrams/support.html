@@ -1,0 +1,54 @@
+<svg viewBox="0 0 760 210" class="diagram-svg" role="img" aria-label="Support automation flow diagram">
+    <path class="edge" d="M115,60 L200,60" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M320,60 L405,60" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M525,60 L580,60 L580,40" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M525,60 L580,60 L580,80" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M660,40 L700,60" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M660,80 L700,60" marker-end="url(#arrow)"></path>
+
+    <g class="node node-ai" tabindex="0"
+        data-desc="A ticket lands in Jira or ServiceNow — the trigger for the whole pipeline, no manual pickup required.">
+        <rect x="15" y="30" width="100" height="60" rx="8"></rect>
+        <text x="65" y="50">Jira /</text>
+        <text x="65" y="67">ServiceNow</text>
+    </g>
+
+    <g class="node node-ai" tabindex="0"
+        data-desc="Webhook pipelines extract full ticket context automatically and trigger diagnostics.">
+        <rect x="200" y="30" width="120" height="60" rx="8"></rect>
+        <text x="260" y="50">Webhook +</text>
+        <text x="260" y="67">Context Extract</text>
+    </g>
+
+    <g class="node node-ai" tabindex="0"
+        data-desc="Adobe MCP gives the agent live environment access — real log and JCR analysis, not guesswork.">
+        <rect x="405" y="30" width="120" height="60" rx="8"></rect>
+        <text x="465" y="50">Adobe MCP</text>
+        <text x="465" y="67" style="font-size:10.5px">Log + JCR Analysis</text>
+    </g>
+
+    <g class="node node-ai node-highlight" tabindex="0"
+        data-desc="A FastAPI engine scores the fix by risk. Anything touching production stops here for a human call.">
+        <rect x="525" y="20" width="140" height="80" rx="8"></rect>
+        <text x="595" y="55">Risk</text>
+        <text x="595" y="72">Classification</text>
+    </g>
+
+    <g class="node node-ai" tabindex="0"
+        data-desc="Low-risk fixes auto-resolve. Everything else waits for human-in-the-loop approval — either way, it's logged.">
+        <rect x="700" y="15" width="55" height="40" rx="6"></rect>
+        <text x="727" y="39" style="font-size:11px">Auto</text>
+    </g>
+    <g class="node node-ai" tabindex="0"
+        data-desc="High-risk changes require human-in-the-loop approval before anything touches production.">
+        <rect x="700" y="65" width="55" height="40" rx="6"></rect>
+        <text x="727" y="89" style="font-size:11px">HITL</text>
+    </g>
+
+    <g class="node node-ai" tabindex="0"
+        data-desc="Every automated action — diagnosis, decision, and resolution — is written to a structured audit trail for traceability.">
+        <rect x="330" y="140" width="200" height="50" rx="8"></rect>
+        <text x="430" y="170">Resolved + Audit Trail</text>
+    </g>
+    <path class="edge" d="M727,105 L727,140 L530,165" marker-end="url(#arrow)"></path>
+</svg>
