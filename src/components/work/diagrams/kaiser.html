@@ -1,41 +1,59 @@
-<svg viewBox="0 0 640 260" class="diagram-svg" role="img" aria-label="Headless AEM hub and spoke diagram">
-    <path class="edge" d="M320,150 L320,90" marker-end="url(#arrow)"></path>
-    <path class="edge" d="M300,120 L150,60" marker-end="url(#arrow)"></path>
-    <path class="edge" d="M340,120 L490,60" marker-end="url(#arrow)"></path>
-    <path class="edge" d="M320,180 L320,215" marker-end="url(#arrow)"></path>
+<svg viewBox="0 0 720 300" class="diagram-svg" role="img" aria-label="Headless AEM Angular regional content flow diagram">
+    <path class="edge" d="M360,80 L360,105" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M360,165 L360,190" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M360,165 L70,190" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M360,165 L215,190" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M360,165 L505,190" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M360,165 L650,190" marker-end="url(#arrow)"></path>
+    <path class="edge" d="M360,230 L360,250" marker-end="url(#arrow)"></path>
 
     <g class="node node-aem node-highlight" tabindex="0"
-        data-desc="Templates, Sling Models, Servlets, and OSGi services — one content model serving every region through GraphQL persisted queries.">
-        <rect x="245" y="120" width="150" height="60" rx="8"></rect>
-        <text x="320" y="145">Headless AEM</text>
-        <text x="320" y="162">Content Hub</text>
+        data-desc="Headless AEM centralizes reusable templates, Content Fragments, and GraphQL persisted queries for every regional experience.">
+        <rect x="285" y="20" width="150" height="60" rx="8"></rect>
+        <text x="360" y="45">Headless AEM</text>
+        <!-- <text x="360" y="62">Content Hub</text> -->
     </g>
 
     <g class="node node-aem" tabindex="0"
-        data-desc="MSM manages multilingual and regional content variants for the North American market.">
-        <rect x="60" y="20" width="90" height="50" rx="8"></rect>
-        <text x="105" y="50">US</text>
-    </g>
-    <g class="node node-aem" tabindex="0"
-        data-desc="Regional content and locale routing via Dispatcher rewrite rules for European delivery.">
-        <rect x="185" y="20" width="90" height="50" rx="8"></rect>
-        <text x="230" y="50">EU</text>
-    </g>
-    <g class="node node-aem" tabindex="0"
-        data-desc="Content Fragments and Experience Fragments adapted for APAC-specific marketing campaigns.">
-        <rect x="365" y="20" width="90" height="50" rx="8"></rect>
-        <text x="410" y="50">APAC</text>
-    </g>
-    <g class="node node-aem" tabindex="0"
-        data-desc="Auto-suggestion search, Adobe Analytics, CJA, and Marketo — the Angular SPA consumes it all through persisted GraphQL queries.">
-        <rect x="490" y="20" width="120" height="50" rx="8"></rect>
-        <text x="550" y="42">Angular SPA</text>
-        <text x="550" y="59" style="font-size:10.5px">GraphQL queries</text>
+        data-desc="The Angular SPA consumes Headless AEM content through GraphQL and renders a shared component experience.">
+        <rect x="285" y="105" width="150" height="60" rx="8"></rect>
+        <text x="360" y="130">Angular SPA</text>
+        <!-- <text x="360" y="147" style="font-size:10.5px">GraphQL delivery</text> -->
     </g>
 
     <g class="node node-aem" tabindex="0"
-        data-desc="Adobe Analytics, CJA, and Marketo integrated for cross-region marketing insight, plus Dispatcher and SEO configuration.">
-        <rect x="245" y="215" width="150" height="40" rx="8"></rect>
-        <text x="320" y="240" style="font-size:11px">Analytics · CJA · Marketo</text>
+        data-desc="California-specific content is authored in the shared Headless AEM model and delivered by the Angular SPA.">
+        <rect x="10" y="190" width="120" height="40" rx="8"></rect>
+        <text x="70" y="215">California</text>
+    </g>
+
+    <g class="node node-aem" tabindex="0"
+        data-desc="Colorado-specific content uses the same component system while allowing regional messaging and configuration.">
+        <rect x="155" y="190" width="120" height="40" rx="8"></rect>
+        <text x="215" y="215">Colorado</text>
+    </g>
+
+    <g class="node node-aem" tabindex="0"
+        data-desc="Georgia-specific content is selected through the regional delivery experience without duplicating the shared application.">
+        <rect x="300" y="190" width="120" height="40" rx="8"></rect>
+        <text x="360" y="215">Georgia</text>
+    </g>
+
+    <g class="node node-aem" tabindex="0"
+        data-desc="Hawaii-specific content supports local needs while remaining part of the same governed AEM content model.">
+        <rect x="445" y="190" width="120" height="40" rx="8"></rect>
+        <text x="505" y="215">Hawaii</text>
+    </g>
+
+    <g class="node node-aem" tabindex="0"
+        data-desc="Additional states and regions can be added through the same content model, components, and delivery pattern.">
+        <rect x="590" y="190" width="120" height="40" rx="8"></rect>
+        <text x="650" y="215">Other Regions</text>
+    </g>
+
+    <g class="node node-aem" tabindex="0"
+        data-desc="Adobe Analytics, Customer Journey Analytics, and Marketo capture behavior and activate cross-region marketing journeys.">
+        <rect x="245" y="250" width="230" height="40" rx="8"></rect>
+        <text x="360" y="275" style="font-size:11px">Analytics · CJA · Marketo</text>
     </g>
 </svg>
