@@ -1,0 +1,17 @@
+{{#with testimonials}}
+<section class="testimonials" id="recommendations">
+    {{> layout/section-head}}
+    <div class="testimonial-grid">
+        {{#each items}}
+        <blockquote class="testimonial-card">
+            <p>{{quote}}</p>
+            <footer>
+                <strong>{{name}}</strong>
+                <span>{{title}}</span>
+                <small>{{relationship}}</small>
+            </footer>
+        </blockquote>
+        {{/each}}
+    </div>
+</section>
+{{/with}}

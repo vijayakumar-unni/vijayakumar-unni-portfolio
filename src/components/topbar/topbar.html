@@ -1,0 +1,18 @@
+<header class="topbar">
+    <div class="topbar-inner">
+        {{! The wordmark image carries the accessible name for the home link. }}
+        <a class="brand" href="#top">
+            <span class="brand-logo">
+                <img src="{{site.brand.wordmark.src}}" alt="{{site.brand.name}}"
+                    width="{{site.brand.wordmark.width}}" height="{{site.brand.wordmark.height}}">
+                <span class="brand-sheen" aria-hidden="true"></span>
+            </span>
+        </a>
+        <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+            {{#each site.nav}}<a href="{{href}}">{{label}}</a>
+            {{/each}}<a class="nav-resume" href="{{resume.href}}" download>Resume</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-nav"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+</header>

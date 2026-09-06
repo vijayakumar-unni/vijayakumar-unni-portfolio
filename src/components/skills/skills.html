@@ -1,0 +1,14 @@
+{{#with skills}}
+<section class="skills" id="skills">
+    {{> layout/section-head}}
+    <div class="skill-grid">
+        {{#each cards}}
+        <article class="skill-card{{#if borderClass}} {{borderClass}}{{/if}}">
+            <span class="dot {{dot}}"></span>
+            <h3>{{title}}</h3>
+            <p>{{body}}</p>
+        </article>
+        {{/each}}
+    </div>
+</section>
+{{/with}}

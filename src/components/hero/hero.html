@@ -1,0 +1,27 @@
+{{#with hero}}
+<section class="hero">
+    <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span>{{location}}</p>
+        <h1>{{#each nameLines}}{{#if @index}}<br>{{/if}}{{.}}{{/each}}</h1>
+        <p class="role">{{role.lead}} <span class="amp">&amp;</span> {{role.tail}}</p>
+        <p class="hero-intro">{{intro}}</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="{{resume.href}}" download>Download Resume</a>
+            <a class="btn btn-ghost" href="mailto:{{site.contact.email}}">Email</a>
+            <a class="btn btn-ghost" href="{{site.contact.linkedin}}" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+    </div>
+    <div class="hero-portrait">
+        <div class="portrait-wrap">
+            <div class="portrait-frame">
+                <img src="{{portrait.src}}" alt="{{portrait.alt}}" width="{{portrait.width}}"
+                    height="{{portrait.height}}" fetchpriority="high">
+            </div>
+            <div class="portrait-tag">
+                <span>{{tag.value}}</span>
+                <small>{{tag.label}}</small>
+            </div>
+        </div>
+    </div>
+</section>
+{{/with}}

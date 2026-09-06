@@ -1,0 +1,186 @@
+.console {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.console-list {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+}
+
+.console-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.console-item:last-child {
+  border-bottom: none;
+}
+
+.console-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.console-item.active {
+  background: var(--panel-raised);
+  box-shadow: inset 3px 0 0 var(--amber);
+}
+
+.item-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.item-meta {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.console-display {
+  padding: 34px 34px 30px;
+  min-width: 0;
+}
+
+/* ---------- Project panel ---------- */
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+  animation: fadein 0.3s ease;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* The panel is only focusable to give the tablist a keyboard exit point; it
+   should not draw a focus ring when reached by a tab click. */
+.panel:focus {
+  outline: none;
+}
+
+.panel:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 4px;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.panel-head h3 {
+  font-size: clamp(19px, 2.2vw, 24px);
+  letter-spacing: -0.01em;
+}
+
+.panel-desc {
+  color: var(--text-soft);
+  font-size: 15px;
+  max-width: 64ch;
+  margin-bottom: 26px;
+  line-height: 1.7;
+}
+
+.panel-points {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+  max-width: 68ch;
+}
+
+.panel-points li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.panel-points li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 1.5px;
+  background: var(--text-faint);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stack span {
+  font-size: 12px;
+  padding: 5px 11px;
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+  color: var(--text-soft);
+  border-radius: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel.active {
+    animation: none;
+  }
+}
+
+/* Below --bp-md the project list becomes a horizontal scroller above the panel. */
+@media (max-width: 980px) {
+  .console {
+    grid-template-columns: 1fr;
+  }
+
+  .console-list {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .console-item {
+    border-bottom: none;
+    border-right: 1px solid var(--line);
+    min-width: 220px;
+  }
+
+  .console-item.active {
+    box-shadow: inset 0 -3px 0 var(--amber);
+  }
+}
+
+@media (max-width: 640px) {
+  .console-display {
+    padding: 24px 18px;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "sectionTag": "Skills",
+  "heading": "Skills & technologies I work with",
+  "cards": [
+    {
+      "title": "AEM & CMS",
+      "borderClass": "border-aem",
+      "dot": "dot-aem",
+      "body": "AEM 6.5 · AEM as a Cloud Service · HTL · Editable Templates · MSM · Content Fragments · Experience Fragments · Client Libraries · Dispatcher · Headless AEM · GraphQL · Adobe Analytics · Marketo"
+    },
+    {
+      "title": "AI & agentic development",
+      "borderClass": "border-ai",
+      "dot": "dot-ai",
+      "body": "Agentic Development Lifecycle (ADLC) · Markdown AEM skills · Adobe MCP · Multi-agent architecture · Claude Agent SDK"
+    },
+    {
+      "title": "Backend",
+      "borderClass": "",
+      "dot": "dot-general",
+      "body": "Java · Servlets · Sling Models · OSGi services · Groovy scripts · Python (basic) · FastAPI · PostgreSQL"
+    },
+    {
+      "title": "Frontend",
+      "borderClass": "",
+      "dot": "dot-general",
+      "body": "HTML · CSS · JavaScript · Angular (basic)"
+    },
+    {
+      "title": "DevOps & tools",
+      "borderClass": "",
+      "dot": "dot-general",
+      "body": "Jenkins · Maven · Git · SonarQube · Adobe Cloud Manager · CI/CD pipelines · AWS EC2 · Playwright · Lighthouse"
+    },
+    {
+      "title": "Methodologies",
+      "borderClass": "",
+      "dot": "dot-general",
+      "body": "Agile · Scrum · Kanban · Jira · Confluence"
+    }
+  ]
+}

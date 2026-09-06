@@ -1,0 +1,6 @@
+{{! Expects sectionTag, heading, and optionally sub in the current scope. }}
+<div class="section-head">
+    <p class="section-tag">{{sectionTag}}</p>
+    <h2>{{heading}}</h2>
+    {{#if sub}}<p class="section-sub">{{sub}}</p>{{/if}}
+</div>

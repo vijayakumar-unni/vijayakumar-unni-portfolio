@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{site.meta.description}}">
+    <meta name="keywords" content="{{site.meta.keywords}}">
+    <meta property="og:title" content="{{site.meta.ogTitle}}">
+    <meta property="og:description" content="{{site.meta.ogDescription}}">
+    <meta property="og:image" content="{{site.url}}{{site.meta.ogImage}}">
+    <meta property="og:url" content="{{site.url}}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>{{site.meta.title}}</title>
+    <link rel="icon" href="{{site.icons.svg}}" type="image/svg+xml">
+    <link rel="icon" href="{{site.icons.png}}" type="image/png" sizes="180x180">
+    <link rel="apple-touch-icon" href="{{site.icons.png}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="{{site.meta.fonts}}" rel="stylesheet">
+    <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body>
+
+    {{> layout/svg-defs}}
+
+    {{> topbar}}
+
+    <main id="top">
+        {{> hero}}
+        {{> stats}}
+        {{> work}}
+        {{> skills}}
+        {{> testimonials}}
+        {{> credentials}}
+    </main>
+
+    {{> footer}}
+
+    <script type="module" src="assets/main.js"></script>
+</body>
+
+</html>

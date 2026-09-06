@@ -1,0 +1,42 @@
+{{#with work}}
+<section class="work" id="work">
+    {{> layout/section-head}}
+
+    <div class="console">
+        <div class="console-list" role="tablist" aria-label="Projects">
+            {{#each projects}}
+            <button class="console-item{{#if @first}} active{{/if}}" type="button" role="tab" id="tab-{{id}}"
+                aria-controls="panel-{{id}}" aria-selected="{{#if @first}}true{{else}}false{{/if}}"
+                tabindex="{{#if @first}}0{{else}}-1{{/if}}" data-project="{{id}}">
+                <span class="item-title">{{listTitle}}</span>
+                <span class="item-meta"><span class="dot {{dot}}"></span>{{listMeta}}</span>
+            </button>
+            {{/each}}
+        </div>
+
+        <div class="console-display">
+            {{#each projects}}
+            <article class="panel{{#if @first}} active{{/if}}" role="tabpanel" id="panel-{{id}}"
+                aria-labelledby="tab-{{id}}" tabindex="0" data-panel="{{id}}">
+                <div class="panel-head">
+                    <h3>{{title}}</h3>
+                    <span class="tag {{tagClass}}">{{tag}}</span>
+                </div>
+                <p class="panel-desc">{{description}}</p>
+
+                <div class="diagram{{#if diagramScroll}} diagram-scroll{{/if}}">
+                    {{>* diagram}}
+                    <p class="diagram-caption" data-default="{{diagramCaption}}">{{diagramCaption}}</p>
+                </div>
+
+                <ul class="panel-points">
+                    {{#each points}}<li>{{.}}</li>
+                    {{/each}}
+                </ul>
+                <div class="stack">{{#each stack}}<span>{{.}}</span>{{/each}}</div>
+            </article>
+            {{/each}}
+        </div>
+    </div>
+</section>
+{{/with}}

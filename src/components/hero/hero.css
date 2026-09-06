@@ -1,0 +1,187 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.95fr);
+  gap: 5vw;
+  align-items: center;
+  padding: 80px 6vw 70px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13.5px;
+  color: var(--text-soft);
+  margin-bottom: 26px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  flex: none;
+  box-shadow: 0 0 0 3px var(--amber-soft);
+}
+
+.hero h1 {
+  font-size: clamp(44px, 6.4vw, 72px);
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+}
+
+.hero .role {
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: var(--text-soft);
+  margin-top: 16px;
+  font-weight: 500;
+}
+
+.hero .role .amp {
+  color: var(--amber);
+}
+
+.hero-intro {
+  margin-top: 22px;
+  max-width: 56ch;
+  font-size: 16px;
+  color: var(--text-soft);
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-portrait {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.portrait-wrap {
+  position: relative;
+  width: min(400px, 100%);
+}
+
+.portrait-frame {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.portrait-frame:before,
+.portrait-frame:after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+
+.portrait-frame:before {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid var(--amber);
+  border-left: 2px solid var(--amber);
+}
+
+.portrait-frame:after {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid var(--amber);
+  border-right: 2px solid var(--amber);
+}
+
+.portrait-tag {
+  position: absolute;
+  left: -18px;
+  bottom: 22px;
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.portrait-tag span {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--amber);
+}
+
+.portrait-tag small {
+  font-size: 11.5px;
+  color: var(--text-soft);
+}
+
+/* ---------- Entrance reveal ---------- */
+.hero-copy,
+.hero-portrait {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rise 0.6s ease forwards;
+}
+
+.hero-portrait {
+  animation-delay: 0.12s;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy,
+  .hero-portrait {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Below --bp-md the portrait stacks under the copy and shrinks. */
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 52px;
+  }
+
+  .hero-portrait {
+    margin-top: 24px;
+  }
+
+  .portrait-wrap {
+    width: 220px;
+  }
+
+  .portrait-tag {
+    left: 0;
+  }
+}

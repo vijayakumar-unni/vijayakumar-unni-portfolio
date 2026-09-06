@@ -1,0 +1,13 @@
+{
+  "name": "vijayakumar-unni-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio for Vijayakumar Unni, built from src/ by a zero-dependency Node script.",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --serve"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

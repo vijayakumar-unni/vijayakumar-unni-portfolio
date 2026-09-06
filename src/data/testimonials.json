@@ -1,0 +1,24 @@
+{
+  "sectionTag": "Recommendations",
+  "heading": "What people who've worked with me say",
+  "items": [
+    {
+      "quote": "“An exceptional AEM Developer with strong technical expertise and a remarkable work ethic. He consistently delivers high-quality, scalable solutions and approaches complex problems with clarity and confidence — even under pressure, he stays composed and solution-oriented.”",
+      "name": "Shreyansh Shukla",
+      "title": "Specialist Senior, Deloitte US",
+      "relationship": "Managed Vijayakumar directly"
+    },
+    {
+      "quote": "“An excellent AEM Developer with strong technical knowledge who consistently delivers high-quality work. Proactive, collaborative, and always willing to step in and help — his ownership mindset makes him a valuable asset to any team.”",
+      "name": "Fariya Jamil",
+      "title": "Senior Frontend Developer, Deloitte USI",
+      "relationship": "Worked together across companies"
+    },
+    {
+      "quote": "“Highly knowledgeable and dependable. He handles tough, high-pressure situations with calmness and clarity, often finding practical solutions where others might struggle — someone the team can always count on.”",
+      "name": "Hitesh R",
+      "title": "AEM Developer",
+      "relationship": "Teammate for nearly 3 years"
+    }
+  ]
+}
